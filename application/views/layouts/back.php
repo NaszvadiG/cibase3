@@ -8,9 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/uikit.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/assets/js/jquery-1.11.2.min.js"><\/script>')</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/uikit.min.js"></script>
-<script>window.UIkit || document.write('<script src="/assets/uikit/<?=UIKIT_VERSION;?>/js/uikit.min.js"><\/script>')</script>
         <?php echo $template['metadata']; ?>
     </head>
     <body>

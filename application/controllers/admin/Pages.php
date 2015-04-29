@@ -20,7 +20,6 @@ class Pages extends CI_Controller
         if ($this->user_model->check_logged_in()!==TRUE) {
             redirect('../admin/login','refresh');
         }
-
         $this->template->set_layout('back');
         $this->template->set('message', $this->session->flashdata('message'));
     }
