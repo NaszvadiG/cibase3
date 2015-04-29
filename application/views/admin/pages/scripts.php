@@ -5,4 +5,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/upload.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/autocomplete.min.css" />
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 <script src="/assets/js/pages.js"></script>

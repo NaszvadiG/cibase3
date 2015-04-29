@@ -8,6 +8,9 @@ $(function(){
         });
     };
 
+    //tinymce
+    tinymce.init({selector:'textarea'});
+
     var modal = UIkit.modal("#my-mediamanager");
     var progressbar = $("#progressbar"),
 bar = progressbar.find('.uk-progress-bar'),
