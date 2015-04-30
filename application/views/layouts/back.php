@@ -16,9 +16,10 @@
 <?php
 if ($this->session->userdata('loggedin')==1) {
 ?>
-<nav class="uk-navbar">
-<a href="/admin/pages" class="uk-navbar-brand">Zapleczko</a>
-    <ul class="uk-navbar-nav">
+<nav class="uk-navbar" style="padding:1em 0;">
+<a href="/admin/pages" class="uk-navbar-brand"><img src="/assets/img/zapleczko.svg" alt="zapleczko logo"/></a>
+ <div class="uk-navbar-content uk-navbar-center">
+    <ul class="uk-navbar-nav uk-container-center">
         <li><a href="/admin/pages">strony</a></li>
         <li><a href="/admin/menus">menu</a></li>
         <li><a href="/admin/pictures">obrazki</a></li>
@@ -26,6 +27,7 @@ if ($this->session->userdata('loggedin')==1) {
         <li><a href="/admin/users">użytkownicy</a></li>
         <li><a href="/admin/logout">wyloguj się</a></li>
     </ul>
+</div>
 </nav>
 <?php
 }
@@ -47,7 +49,7 @@ if ($message){
 echo $template['body'];
 ?>
 
-<footer class="uk-margin uk-margin-large-top">
+<footer class="uk-margin uk-margin-large-top uk-text-center">
 <hr/>
 <p>
 <?php
