@@ -1,18 +1,10 @@
-<link rel="stylesheet" href="/assets/uikit-2.16.2/css/components/upload.min.css">
-<link rel="stylesheet" href="/assets/uikit-2.16.2/css/components/form-file.min.css">
-<link rel="stylesheet" href="/assets/uikit-2.16.2/css/components/placeholder.min.css">
-<link rel="stylesheet" href="/assets/uikit-2.16.2/css/components/upload.gradient.min.css">
-<script src="/assets/uikit-2.16.2/js/components/upload.min.js"></script>
-<script src="/assets/uikit-2.16.2/js/components/autocomplete.min.js"></script>
-<script src="/assets/js/back.pages.js"></script>
-<link rel="stylesheet" href="/assets/uikit-2.16.2/css/components/autocomplete.min.css" />
 <?php
-$this->load->view('admin/tinymce/tiny');
+$this->load->view('admin/pages/scripts');
 ?>
-
 <div class="uk-width-1-1 uk-margin-top">
 <?php
-echo form_open('',array('class'=>'uk-form uk-form-stacked')); 
+echo form_open('',array('class'=>'uk-form uk-form-stacked'));
+echo validation_errors();
 ?>
 <fieldset>
 <legend>edytuj stronę</legend>
@@ -22,7 +14,7 @@ echo form_open('',array('class'=>'uk-form uk-form-stacked'));
 <?php
 $data=array(
     'name'=>'title',
-    'value' => $page->title
+    'value' => set_value('title', $page->title)
 );
 echo form_input($data);
 ?>
@@ -33,8 +25,9 @@ echo form_input($data);
 <?php
 $data=array(
     'name'=>'desc',
+    'value' => set_value('desc', $page->desc)
 );
-echo form_input($data,set_value('desc',$page->desc,false)); 
+echo form_input($data);
 ?>
 </div>
 
@@ -47,26 +40,24 @@ echo form_input($data,set_value('desc',$page->desc,false));
 <label class="uk-form-label">treść</label>
 <?php
 $data = array(
-  'name' => 'body',
+    'name' => 'body',
+    'value' => set_value('body',$page->body,FALSE),
 );
-echo form_textarea($data,set_value('body',$page->body,false)); 
+echo form_textarea($data);
 ?>
 </div>
 
 <div class="uk-form-row">
 <label class="uk-form-label">typ</label>
-<div class="uk-autocomplete uk-form uk-margin-bottom" data-uk-autocomplete="{source:'/ajax/pages_autocomplete_type'}">
-<input type="text" name="type" value="<?php echo set_value('type',$page->type);?>">
+<div class="uk-autocomplete uk-form uk-margin-bottom" data-uk-autocomplete="{source:'/admin/ajax/pages_autocomplete_type'}">
+<input type="text" name="type" value="<?php echo set_value('type', $page->type);?>">
 <span class="uk-form-help-inline">zacznij wpisywać typ,jeśli jakiś istnieje, wyświetli się do wyboru, sugerowane np str_glowna, strona albo post</span>
 </div>
 
 <div class="uk-form-row">
+<button type="submit" class="uk-button uk-button-primary">zapisz</button>
 <?php
-echo form_submit(array('name'=>'submit','class'=>'uk-button uk-margin uk-button-primary'), 'zapisz'); 
-echo form_close(); 
-?>
-<?php
-$this->load->view('admin/my-mediamanager/index');
+echo form_close();
 ?>
 </div>
 </div>

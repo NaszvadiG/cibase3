@@ -3,7 +3,7 @@ $this->load->view('admin/pages/scripts');
 ?>
 <div class="uk-width-1-1 uk-margin-top">
 <?php
-echo form_open('',array('class'=>'uk-form uk-form-stacked')); 
+echo form_open('',array('class'=>'uk-form uk-form-stacked'));
 echo validation_errors();
 ?>
 <fieldset>
@@ -14,8 +14,9 @@ echo validation_errors();
 <?php
 $data=array(
     'name'=>'title',
+    'value' => set_value('title')
 );
-echo form_input($data,set_value('title'));
+echo form_input($data);
 ?>
 </div>
 
@@ -23,9 +24,10 @@ echo form_input($data,set_value('title'));
 <label class="uk-form-label">opis dla przeglądarki</label>
 <?php
 $data=array(
-  'name'=>'desc'
+  'name'=>'desc',
+  'value' => set_value('desc')
 );
-echo form_input($data, set_value('desc')); 
+echo form_input($data);
 ?>
 </div>
 
@@ -39,8 +41,9 @@ echo form_input($data, set_value('desc'));
 <?php
 $data = array(
   'name' => 'body',
+  'value' => set_value('body','',FALSE),
 );
-echo form_textarea($data, set_value('body','',FALSE)); 
+echo form_textarea($data);
 ?>
 </div>
 
@@ -52,9 +55,9 @@ echo form_textarea($data, set_value('body','',FALSE));
 </div>
 
 <div class="uk-form-row">
+<button type="submit" class="uk-button uk-button-primary">zapisz</button>
 <?php
-echo form_submit(array('name'=>'submit','class'=>'uk-button uk-margin uk-button-primary'), 'zapisz'); 
-echo form_close(); 
+echo form_close();
 ?>
 </div>
 </div>
