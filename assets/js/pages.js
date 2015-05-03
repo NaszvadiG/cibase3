@@ -13,7 +13,7 @@ $(function(){
 
     var modal = UIkit.modal("#my-mediamanager");
     var progressbar = $("#progressbar"),
-bar = progressbar.find('.uk-progress-bar'),
+    bar = progressbar.find('.uk-progress-bar'),
 
 settings = {
     action: '/admin/ajax/add_picture', // upload url

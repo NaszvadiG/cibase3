@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 define('SITE_TITLE','ci_base 3');
-define('UIKIT_VERSION','2.20.1');
+define('UIKIT_VERSION','2.20.2');
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes
