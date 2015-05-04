@@ -31,11 +31,6 @@ echo form_input($data);
 ?>
 </div>
 
-
-<div class="uk-form-row">
-<a href="#my-mediamanager" class="uk-button uk-button-success" data-uk-modal>DODAJ MEDIA</a>
-</div>
-
 <div class="uk-form-row">
 <label class="uk-form-label">treść</label>
 <?php
@@ -51,7 +46,7 @@ echo form_textarea($data);
 <label class="uk-form-label">typ</label>
 <div class="uk-autocomplete uk-form uk-margin-bottom" data-uk-autocomplete="{source:'/admin/ajax/pages_autocomplete_type'}">
 <input type="text" name="type" value="<?php echo set_value('type');?>">
-<span class="uk-form-help-inline">zacznij wpisywać typ,jeśli jakiś istnieje, wyświetli się do wyboru, sugerowane np str_glowna, strona albo post</span>
+<span class="uk-form-help-inline">typ strony: str_glowna, strona</span>
 </div>
 
 <div class="uk-form-row">
@@ -61,4 +56,3 @@ echo form_close();
 ?>
 </div>
 </div>
-

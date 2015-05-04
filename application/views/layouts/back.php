@@ -16,10 +16,10 @@
 <?php
 if ($this->session->userdata('loggedin')==1) {
 ?>
-<nav class="uk-navbar" style="padding:1em 0;">
+<nav class="uk-navbar uk-navbar-attached" style="padding:1em 0;">
+<div class="uk-container uk-container-center">
 <a href="/admin/pages" class="uk-navbar-brand"><img src="/assets/img/zapleczko.svg" alt="zapleczko logo"/></a>
- <div class="uk-navbar-content uk-navbar-center">
-    <ul class="uk-navbar-nav uk-container-center">
+    <ul class="uk-navbar-nav ">
         <li><a href="/admin/pages">strony</a></li>
         <li><a href="/admin/menus">menu</a></li>
         <li><a href="/admin/pictures">obrazki</a></li>
