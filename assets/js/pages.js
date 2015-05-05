@@ -29,7 +29,9 @@ $(function(){
     var myButton=$('<div class="uk-form-row"><a href="#my-mediamanager" class="uk-button uk-button-success" data-uk-modal>DODAJ MEDIA</a></div>').insertAfter('div.uk-form-row:has(input[name=desc])');
 
     //2 - create modal
-    $('<div id="my-mediamanager" class="uk-modal"><div class="uk-modal-dialog uk-modal-dialog-large"><a class="uk-modal-close uk-close"></a><ul class="uk-tab" data-uk-tab> <li class="my-pictures uk-active"><a href="#">obrazki</a><div>content</div></li><li class="my-galleries"><a href="#">galerie</a></li></ul></div></div>').appendTo('body');
+    $('<div id="my-mediamanager" class="uk-modal"><div class="uk-modal-dialog uk-modal-dialog-large"><a class="uk-modal-close uk-close"></a>' +
+'<!-- This is the container of the toggling elements --> <ul data-uk-switcher="{connect:\'#my-id\'}"> <li><a href="#">wybierz jeden</a></li> <li><a href="#">wybierz dwa</a></li> </ul> <!-- This is the container of the content items --> <ul id="my-id" class="uk-switcher"> <li>pierwsza</li> <li>druga</li> </ul>'+
+'</div></div>').appendTo('body');
 
     var modal = UIkit.modal("#my-mediamanager");
 
