@@ -1,6 +1,3 @@
-<?php
-$this->load->view('admin/pages/scripts');
-?>
 <div class="uk-width-1-1 uk-margin-top">
 <?php
 echo form_open('',array('class'=>'uk-form uk-form-stacked'));

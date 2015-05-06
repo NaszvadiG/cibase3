@@ -7,8 +7,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/uikit.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/uikit.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/upload.min.css">
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/form-file.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/placeholder.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/upload.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/autocomplete.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/uikit.min.js" defer></script>
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/upload.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js" defer></script>
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js" defer></script>
+<script src="/assets/js/pages.js" defer></script>
         <?php echo $template['metadata']; ?>
     </head>
     <body>

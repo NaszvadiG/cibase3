@@ -1,16 +1,5 @@
-<?php
-if ($this->uri->segment(3) == '' || $this->uri->segment(3) == 'index' ) 
-{
-    //load datatabbles on index
-?>
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-<?php } 
-
-//load scripts on add and edit
-if ($this->uri->segment(3) == 'add' || $this->uri->segment(3) == 'edit' ) 
-{
-?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/upload.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/form-file.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/placeholder.min.css">
@@ -19,5 +8,4 @@ if ($this->uri->segment(3) == 'add' || $this->uri->segment(3) == 'edit' )
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/autocomplete.min.css" />
 <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
-<?php } ?>
 <script src="/assets/js/pages.js"></script>
