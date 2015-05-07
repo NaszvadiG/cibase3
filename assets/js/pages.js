@@ -1,4 +1,4 @@
-$(function(){
+(function($){
 
     //datatables
     var tables = $('.uk-table');
@@ -95,4 +95,4 @@ $(function(){
     });
 
 
-});
+})(jQuery);

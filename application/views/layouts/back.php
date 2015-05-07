@@ -8,19 +8,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/uikit.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/upload.min.css">
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="//cdn.datatables.net/<?=DATATABLES_VERSION;?>/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/form-file.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/placeholder.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/upload.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/autocomplete.min.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/<?=JQUERY_VERSION;?>/jquery.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/uikit.min.js" defer></script>
-<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/upload.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js" defer></script>
-<script src="//tinymce.cachefly.net/4.1/tinymce.min.js" defer></script>
-<script src="/assets/js/pages.js" defer></script>
-        <?php echo $template['metadata']; ?>
+<script src="//cdn.datatables.net/<?=DATATABLES_VERSION;?>/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/upload.min.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js" async ></script>
+<script src="//tinymce.cachefly.net/<?=TINYMCE_VERSION;?>/tinymce.min.js" async ></script>
+                <?php echo $template['metadata']; ?>
     </head>
     <body>
 
@@ -70,7 +69,7 @@ echo 'Wersje php na serwerze:'.PHP_VERSION;
 </footer>
 </div>
 
-
+<script src="/assets/js/pages.js" defer></script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
 //(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

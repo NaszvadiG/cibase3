@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 define('SITE_TITLE','ci_base 3');
+define('HTML_LANG','pl');
+define('JQUERY_VERSION','1.11.3');
+define('TINYMCE_VERSION','4.1');
+define('DATATABLES_VERSION','1.10.7');
+define('FRONT_CSS_VERSION','0.1.0');
 define('UIKIT_VERSION','2.20.3');
 /*
 |--------------------------------------------------------------------------

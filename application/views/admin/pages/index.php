@@ -1,6 +1,3 @@
-<?php
-$this->load->view('admin/pages/scripts');
-?>
 <div class="uk-width-1-1 uk-margin-top">
 <div class="uk-overflow-container">
 <h2>strony</h2>
