@@ -1,4 +1,5 @@
-(function($){
+(function($,UIkit,tinymce){
+    'use strict';
 
     //datatables
     var tables = $('.uk-table');
@@ -95,4 +96,4 @@
     });
 
 
-})(jQuery);
+})(jQuery,UIkit,tinymce);

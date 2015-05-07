@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="pl">
     <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,12 +13,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/placeholder.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/upload.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/autocomplete.min.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/<?=JQUERY_VERSION;?>/jquery.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/uikit.min.js" defer></script>
-<script src="//cdn.datatables.net/<?=DATATABLES_VERSION;?>/js/jquery.dataTables.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/upload.min.js" async></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js" async ></script>
-<script src="//tinymce.cachefly.net/<?=TINYMCE_VERSION;?>/tinymce.min.js" async ></script>
                 <?php echo $template['metadata']; ?>
     </head>
     <body>
@@ -68,8 +62,13 @@ echo 'Wersje php na serwerze:'.PHP_VERSION;
     . Strona zrenderowana w {elapsed_time} sekund. Zużycie pamięci {memory_usage}. UIkit <?=UIKIT_VERSION;?> 
 </footer>
 </div>
-
-<script src="/assets/js/pages.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/<?=JQUERY_VERSION;?>/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/uikit.min.js"></script>
+<script src="//cdn.datatables.net/<?=DATATABLES_VERSION;?>/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/upload.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js"></script>
+<script src="//tinymce.cachefly.net/<?=TINYMCE_VERSION;?>/tinymce.min.js"></script>
+<script src="/assets/js/pages.js"></script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
 //(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

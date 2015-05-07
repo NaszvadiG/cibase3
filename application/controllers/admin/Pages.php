@@ -8,7 +8,7 @@ if (!defined('BASEPATH')) {
  *
  * @package zapleczko
  * @subpackage pages
- * @version 0.7
+ * @version 0.7.1
  */
 class Pages extends CI_Controller
 {
@@ -49,7 +49,16 @@ class Pages extends CI_Controller
      */
     public function add()
     {
-        if ($this->input->post())
+        $this->form_validation->set_rules('title', 'Tytuł', 'required|trim');
+        $this->form_validation->set_rules('desc', 'Opis', 'required|trim');
+        $this->form_validation->set_rules('body', 'Treść', 'required|trim');
+        $this->form_validation->set_rules('type', 'Typ', 'trim');
+
+        if ($this->form_validation->run() === FALSE)
+        {
+            $this->template->build('admin/pages/add');
+        } 
+        else 
         {
             $data=$this->input->post();
             $data['slug'] = strtolower(url_title($data['title']));
@@ -60,8 +69,6 @@ class Pages extends CI_Controller
                 redirect('../admin/pages/edit/'.$lastid,'refresh');
             }
         }
-
-        $this->template->build('admin/pages/add');
     }
 
     /**
@@ -101,6 +108,20 @@ class Pages extends CI_Controller
         $this->page_model->delete($page_id);
         $this->session->set_flashdata('message', 'udało się skasować stronę');
         redirect('../admin/pages','refresh');
+    }
+
+    /**
+     * autocomplete type
+     *
+     * @param string $_POST['search']
+     * @return boolean
+     */
+    public function autocomplete()
+    {
+        $type=$this->input->post('search');
+        $search=$this->page_model->autocomplete_type($type);
+        echo json_encode($search);
+        return true;
     }
 }
 /* End of file Pages.php */
