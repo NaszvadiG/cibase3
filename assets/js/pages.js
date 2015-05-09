@@ -31,7 +31,7 @@
 
     //2 - create modal
     $('<div id="my-mediamanager" class="uk-modal"><div class="uk-modal-dialog uk-modal-dialog-large"><a class="uk-modal-close uk-close"></a>' +
-'<!-- This is the container of the toggling elements --> <ul data-uk-switcher="{connect:\'#my-id\'}"> <li><a href="#">wybierz jeden</a></li> <li><a href="#">wybierz dwa</a></li> </ul> <!-- This is the container of the content items --> <ul id="my-id" class="uk-switcher"> <li>pierwsza</li> <li>druga</li> </ul>'+
+'<ul data-uk-switcher="{connect:\'#my-id\'}"> <li><a href="#">obrazki</a></li> <li><a href="#">galerie</a></li> </ul><ul id="my-id" class="uk-switcher"> <li>pierwsza</li> <li>druga</li> </ul>'+
 '</div></div>').appendTo('body');
 
     var modal = UIkit.modal("#my-mediamanager");

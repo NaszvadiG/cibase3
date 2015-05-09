@@ -79,7 +79,19 @@ class Pages extends CI_Controller
      */
     public function edit($page_id)
     {
-        if ($this->input->post()) 
+        $this->form_validation->set_rules('title', 'Tytuł', 'required|trim');
+        $this->form_validation->set_rules('desc', 'Opis', 'required|trim');
+        $this->form_validation->set_rules('body', 'Treść', 'required|trim');
+        $this->form_validation->set_rules('type', 'Typ', 'trim');
+
+        if ($this->form_validation->run() === FALSE)
+        {
+            $page = $this->page_model->get($page_id);
+            $this->template->build('admin/pages/edit',array(
+                'page' => $page,
+            ));
+        } 
+        else 
         {
             $data=$this->input->post();
             $data['slug'] = strtolower(url_title($data['title']));
@@ -91,10 +103,6 @@ class Pages extends CI_Controller
             }
         }
 
-        $page = $this->page_model->get($page_id);
-        $this->template->build('admin/pages/edit',array(
-            'page' => $page,
-        ));
     }
 
     /**
