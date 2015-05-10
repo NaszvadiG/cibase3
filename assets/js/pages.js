@@ -31,16 +31,30 @@
 
     //2 - create modal
     $('<div id="my-mediamanager" class="uk-modal"><div class="uk-modal-dialog uk-modal-dialog-large"><a class="uk-modal-close uk-close"></a>' +
-'<ul data-uk-switcher="{connect:\'#my-id\'}"> <li><a href="#">obrazki</a></li> <li><a href="#">galerie</a></li> </ul><ul id="my-id" class="uk-switcher"> <li>pierwsza</li> <li>druga</li> </ul>'+
-'</div></div>').appendTo('body');
+            '<div id="upload-drop" class="uk-placeholder uk-margin-top"> możesz tutaj wrzucić obrazek... <a class="uk-form-file">Select a file<input id="upload-select" type="file"></a>.  </div><div id="progressbar" class="uk-progress uk-hidden"> <div class="uk-progress-bar" style="width: 0%;">...</div> </div>'+
+            '<ul class="uk-tab" data-uk-switcher="{connect:\'#my-media\'}"> <li><a href="#">obrazki</a></li> <li><a href="#">galerie</a></li> </ul><ul id="my-media" class="uk-switcher"> <li class="my-pictures">obrazki</li> <li class="my-galleries">galerie</li> </ul>'+
+            '</div></div>').appendTo('body');
+
+    //insert into my-pictures
+    var pictures = {
+  html: function() {
+    return $.getJSON('/admin/pictures/get_pictures').then(function(data) {
+      return data.text;
+    });
+  }
+};
+    pictures.html().done(function(html) {
+      $(".my-pictures").append(html);
+    }).fail(function(){alert('something went wrong');});
 
     var modal = UIkit.modal("#my-mediamanager");
+
 
     var progressbar = $("#progressbar"),
         bar = progressbar.find('.uk-progress-bar'),
 
         settings = {
-            action: '/admin/ajax/add_picture', // upload url
+            action: '/admin/pictures/add_ajax', // upload url
             param: 'userfile',
             type: 'json',
             allow : '*.(jpg|gif|png)', // allow only images
@@ -49,28 +63,27 @@
                 bar.css("width", "0%").text("0%");
                 progressbar.removeClass("uk-hidden");
             },
-
             progress: function(percent) {
                 percent = Math.ceil(percent);
                 bar.css("width", percent+"%").text(percent+"%");
             },
-
             allcomplete: function(response) {
-
                 bar.css("width", "100%").text("100%");
                 setTimeout(function(){
                     progressbar.addClass("uk-hidden");
                 }, 250);
 
+                //get all images and put into pictures again
+
                 var content=tinymce.activeEditor.getContent();
                 tinymce.activeEditor.setContent(content+'<p><img src="/images/'+response.file_name+'"/></p><p>tutaj pisz dalej</p>');
-                modal.hide();
             }
         };
 
     var select = $.UIkit.uploadSelect($("#upload-select"), settings),
         drop   = $.UIkit.uploadDrop($("#upload-drop"), settings);
 
+    //media gallery insert - TODO
     $('#my-mediamanager-insert-gallery').on('click',function(e){
         e.preventDefault();
         var gallery_id=$('select').val();
