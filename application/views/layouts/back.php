@@ -18,7 +18,7 @@
     <body>
 
 <?php
-if ($this->session->userdata('loggedin')==1) {
+if ($this->ion_auth->logged_in()) {
 ?>
 <nav class="uk-navbar uk-navbar-attached" style="padding:1em 0;">
 <div class="uk-container uk-container-center">
@@ -52,8 +52,9 @@ if ($message){
 <?php
 echo $template['body'];
 ?>
+</div>
 
-<footer class="uk-margin uk-margin-large-top uk-text-center">
+<footer class="uk-margin uk-margin-large-top uk-text-center uk-container uk-container-center">
 <hr/>
 <p>
 <?php
@@ -61,7 +62,6 @@ echo 'Wersje php na serwerze:'.PHP_VERSION;
 ?>
     . Strona zrenderowana w {elapsed_time} sekund. Zużycie pamięci {memory_usage}. UIkit <?=UIKIT_VERSION;?> 
 </footer>
-</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/<?=JQUERY_VERSION;?>/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/uikit.min.js"></script>
 <script src="//cdn.datatables.net/<?=DATATABLES_VERSION;?>/js/jquery.dataTables.min.js"></script>
@@ -69,6 +69,7 @@ echo 'Wersje php na serwerze:'.PHP_VERSION;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js"></script>
 <script src="//tinymce.cachefly.net/<?=TINYMCE_VERSION;?>/tinymce.min.js"></script>
 <script src="/assets/js/pages.js"></script>
+
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
 //(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
