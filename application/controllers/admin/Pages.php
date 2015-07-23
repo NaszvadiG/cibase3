@@ -22,9 +22,7 @@ class Pages extends CI_Controller
     {
         parent::__construct();
         //Check if the user is logged in
-        if ($this->user_model->check_logged_in()!==TRUE) {
-            redirect('../admin/login','refresh');
-        }
+        !$this->ion_auth->logged_in() ?  redirect('../admin/auth','refresh') : '';
         $this->template->set_layout('back');
         $this->template->set('message', $this->session->flashdata('message'));
     }
@@ -38,7 +36,7 @@ class Pages extends CI_Controller
     {
         $pages=$this->page_model->get_all();
         $this->template->build('admin/pages/index',array(
-                'pages' => $pages,
+            'pages' => $pages,
         ));
     }
 
@@ -54,13 +52,10 @@ class Pages extends CI_Controller
         $this->form_validation->set_rules('body', 'Treść', 'required|trim');
         $this->form_validation->set_rules('type', 'Typ', 'trim');
 
-        if ($this->form_validation->run() === FALSE)
-        {
+        if ($this->form_validation->run() === FALSE) {
             $this->template->build('admin/pages/add');
-        } 
-        else 
-        {
-            $data=$this->input->post();
+        } else {
+            $data = $this->input->post();
             $data['slug'] = strtolower(url_title($data['title']));
 
             if ($lastid = $this->page_model->insert($data))
@@ -84,15 +79,12 @@ class Pages extends CI_Controller
         $this->form_validation->set_rules('body', 'Treść', 'required|trim');
         $this->form_validation->set_rules('type', 'Typ', 'trim');
 
-        if ($this->form_validation->run() === FALSE)
-        {
+        if ($this->form_validation->run() === FALSE) {
             $page = $this->page_model->get($page_id);
             $this->template->build('admin/pages/edit',array(
                 'page' => $page,
             ));
-        } 
-        else 
-        {
+        } else {
             $data=$this->input->post();
             $data['slug'] = strtolower(url_title($data['title']));
 
@@ -119,15 +111,15 @@ class Pages extends CI_Controller
     }
 
     /**
-     * autocomplete type
+     * Autocomplete type
      *
      * @param string $_POST['search']
      * @return boolean
      */
     public function autocomplete()
     {
-        $type=$this->input->post('search');
-        $search=$this->page_model->autocomplete_type($type);
+        $type = $this->input->post('search');
+        $search = $this->page_model->autocomplete_type($type);
         echo json_encode($search);
         return true;
     }

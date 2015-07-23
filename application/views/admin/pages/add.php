@@ -33,6 +33,10 @@ echo form_input($data);
 </div>
 
 <div class="uk-form-row">
+<a href="#mediamanager" id="mediamanager__button" class="uk-button uk-button-success" data-uk-modal>DODAJ MEDIA</a>
+</div>
+
+<div class="uk-form-row">
 <label class="uk-form-label">treść</label>
 <div class="uk-form-controls">
 <?php

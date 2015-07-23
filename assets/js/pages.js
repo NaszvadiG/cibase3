@@ -5,6 +5,7 @@
     tinymce.init({
         language : 'pl',
         language_url : '/assets/js/pl.js',
+        convert_urls: false,
         selector: "textarea",
         plugins: [
         "advlist autolink lists link image charmap print preview anchor textcolor colorpicker",

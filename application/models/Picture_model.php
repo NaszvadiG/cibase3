@@ -1,18 +1,17 @@
 <?php
 class Picture_model extends MY_Model
 {
-    public $before_create = array( 'created_at');
+   public $has_many=array('pictures_galleries');
 
-    /**
-     * undocumented function
-     *
-     * @return void
-     * @author Me
-     */
-    public function get_pictures()
-    {
-        $pictures=$this->picture_model->as_array()->get_all();
-        return $pictures;
-    }
-
+   /**
+    * undocumented function
+    *
+    * @return void
+    * @author Me
+    */
+   public function get_selected($selected)
+   {
+$query = $this->db->where_in('id', $selected)->get('pictures');
+           return $query->result();
+   }
 }

@@ -18,40 +18,11 @@
     </head>
     <body>
 <div class="uk-container uk-container-center">
-<header>
-<div class="uk-grid">
-<div class="uk-width-medium-1-2">
-    <a href="/" class="uk-hidden-small"><img alt="UIkit" title="UIkit" src="/assets/img/logo-sklep.png"></a>
-</div>
-<div class="uk-width-medium-1-2 nw-header-address">
-<p>ul. Walecznych 61<br/>
-pon.&ndash;pt.:10<sup>00</sup>&ndash;19<sup>00</sup><br/>
-sob.:10<sup>00</sup>&ndash;16<sup>00</sup> 
-</div>
-</div>
-<div class="uk-text-right">
-<a class="nw-cart-button uk-button uk-margin-top" href="/shop/display_cart"><i class="uk-icon-shopping-cart uk-icon-medium"></i> KOSZYK (<span class="nw-cart-total-items"><?=$this->cart->total_items();?></span>)</a>
-</div>
-<nav class="nw-mainnav">
-<?php
-echo $menu;
-?>
-</nav>
-</header>
-<hr/>
-</div>
-
-<div class="uk-container uk-container-center">
-<section class="niewinne-content">
+<section >
 <?php
     echo $template['body'];
 ?>
 </section>
-</div>
-<div class="uk-container uk-container-center uk-margin-top">
-<hr/>
-<footer><p>Niewinneiwinne.com.pl <?php echo date('Y');?>
-</footer>
 </div>
            </body>
 </html>

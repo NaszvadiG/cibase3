@@ -67,8 +67,10 @@ echo 'Wersje php na serwerze:'.PHP_VERSION;
 <script src="//cdn.datatables.net/<?=DATATABLES_VERSION;?>/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/upload.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/grid.min.js"></script>
 <script src="//tinymce.cachefly.net/<?=TINYMCE_VERSION;?>/tinymce.min.js"></script>
 <script src="/assets/js/pages.js"></script>
+<script src="/assets/js/mediamanager.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
