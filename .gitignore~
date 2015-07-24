@@ -2,7 +2,6 @@
 /system/*
 /assets/*
 /upload/*
-/config/database.php
 !/assets/js
 !/assets/img
 */config/development
