@@ -1,24 +1,102 @@
+(function ($, UIkit) {
+    'use strict';
+
+    //set array
+    var selected = [];
+
+    function prepareUpload(){
+
+        var progressbar = $(".mediamanager__progress"),
+bar         = progressbar.find('.mediamanager__progress-bar'),
+settings    = {
+
+    action: '/admin/mediamanager/upload', // upload url
+param : 'userfile',
+type : 'json',
+allow : '*.(jpg|jpeg|gif|png)', // allow only images
+
+loadstart: function() {
+    bar.css("width", "0%").text("0%");
+    progressbar.removeClass("uk-hidden");
+},
+
+    progress: function(percent) {
+        percent = Math.ceil(percent);
+        bar.css("width", percent+"%").text(percent+"%");
+    },
+
+    error : function(response) {
+        UIkit.notify(response.error)
+    },
+
+    allcomplete: function(response) {
+
+        bar.css("width", "100%").text("100%");
+
+        setTimeout(function(){
+            progressbar.addClass("uk-hidden");
+            if (response.error) {
+                UIkit.notify(response.error)
+            } else {
+                $('.mediamanager__grid').prepend(response.image); 
+            }
+
+        }, 250);
+
+
+    }
+};
+
+var select_image = UIkit.uploadSelect($(".mediamanager__upload-select"), settings),
+    drop_image   = UIkit.uploadDrop($(".mediamanager__upload-drop"), settings);
+}
+
+function getPictures(){
+        $('.loading').html('<i class="uk-icon-spinner uk-icon-spin"></i> ');
+    $.ajax(
+            {
+                url: '/admin/mediamanager/index',
+        dataType: "html",
+        success: function(data) {
+            $('.mediamanager__grid').html(data);
+            $('.loading').empty();
+        },
+        error: function(e) 
+    {
+        alert('Error: ' + e);
+    }
+            });
+
+}
+
+
+function checkSelected (){
+    //check if alredy in selected
+    var images = $('.mediamanager__grid img');
+    for (var i = 0; i < images.length; i++) {
+        var which = $.inArray($(images[i]).data('id'), selected);
+        which != -1 ? $(images[i]).addClass('mediamanager__thumb--active').removeClass('mediamanager__thumb'): '';
+    };
+}
+
 $(function(){
-    //get_html
+    //
+
+    //create modal
     $.ajax(
         {
-            url: '/admin/mediamanager/index',
-    dataType: "html",
-    success: function(data) {
-        $('body').append(data);
-        modal = UIkit.modal(".mediamanager__modal");
-        prepareUpload();
-        UIkit.grid('.mediamanager__grid', { gutter:20});
-    },
-    error: function(e) 
+            url: '/admin/mediamanager/get_modal',
+        dataType: "html",
+        success: function(data) {
+            $('body').append(data);
+            prepareUpload();
+            getPictures();
+        },
+        error: function(e) 
     {
         alert('Error: ' + e);
     }
         });
-
-    //set array
-    var selected = [];
-    //get modal
 
     //click thumb and thumb--active
     $('body').on('click', '.mediamanager__thumb', function(){
@@ -53,7 +131,8 @@ $(function(){
                     //clear selected
                     selected = [];
                     $('.mediamanager__thumb--active').addClass('mediamanager__thumb').removeClass('mediamanager__thumb--active');
-                    modal.hide();
+
+                    UIkit.modal(".mediamanager__modal").hide();
                 },
                 error: function(e) 
             {
@@ -74,7 +153,8 @@ $(function(){
                     //clear selected
                     selected = [];
                     $('.mediamanager__thumb--active').addClass('mediamanager__thumb').removeClass('mediamanager__thumb--active');
-                    modal.hide();
+
+                    UIkit.modal(".mediamanager__modal").hide();
                 },
                 error: function(e) 
             {
@@ -85,50 +165,32 @@ $(function(){
         }
     });
 
-    function prepareUpload(){
+    //click pagination
+    $('body').on('click', '.mediamanager__grid .uk-pagination a', function(e){
+        e.preventDefault();
+        $('.loading').html('<i class="uk-icon-spinner uk-icon-spin"></i> ');
+        $.ajax(
+            {
+                url: this.href,
+            dataType: "html",
+            onprogress: function(){
+                console.log('pror');
+            },
+            success: function(data) {
+                $('.mediamanager__grid').html(data);
 
-var progressbar = $(".mediamanager__progress"),
-    bar         = progressbar.find('.mediamanager__progress-bar'),
-    settings    = {
+                checkSelected();
+                $('.loading').empty();
 
-        action: '/admin/mediamanager/upload', // upload url
-        param : 'userfile',
-        type : 'json',
-        allow : '*.(jpg|jpeg|gif|png)', // allow only images
-
-        loadstart: function() {
-            bar.css("width", "0%").text("0%");
-            progressbar.removeClass("uk-hidden");
-        },
-
-        progress: function(percent) {
-            percent = Math.ceil(percent);
-            bar.css("width", percent+"%").text(percent+"%");
-        },
-
-        error : function(response) {
-                    UIkit.notify(response.error)
-        },
-
-        allcomplete: function(response) {
-
-            bar.css("width", "100%").text("100%");
-
-            setTimeout(function(){
-                progressbar.addClass("uk-hidden");
-                if (response.error) {
-                    UIkit.notify(response.error)
-                } else {
-                    $('.mediamanager__grid').prepend(response.image); 
-                }
-
-            }, 250);
-
+            },
+            error: function(e) 
+        {
+            alert('Error: ' + e);
         }
-    };
+            });
 
-var select_image = UIkit.uploadSelect($(".mediamanager__upload-select"), settings),
-    drop_image   = UIkit.uploadDrop($(".mediamanager__upload-drop"), settings);
-    }
+    });
+
 
 });
+})(jQuery, UIkit);

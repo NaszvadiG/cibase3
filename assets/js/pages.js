@@ -6,6 +6,7 @@
         language : 'pl',
         language_url : '/assets/js/pl.js',
         convert_urls: false,
+        content_css : "https://cdnjs.cloudflare.com/ajax/libs/uikit/"+UIKIT_VERSION+"/css/uikit.min.css", 
         selector: "textarea",
         plugins: [
         "advlist autolink lists link image charmap print preview anchor textcolor colorpicker",

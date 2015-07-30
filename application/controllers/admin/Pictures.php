@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * pictures controller
  * @package zapleczko
  * @subpackage pictures
- * @version 0.0.5
+ * @version 0.0.6
  */
 
 class Pictures extends CI_Controller
@@ -12,10 +12,7 @@ class Pictures extends CI_Controller
     function __construct()
     {
         parent::__construct();
-//Check if the user is logged in
-        if ($this->user_model->check_logged_in()!==TRUE) {
-            redirect('../admin/login', 'refresh');
-        }
+        !$this->ion_auth->logged_in() ?  redirect('../admin/auth','refresh') : '';
         $this->template->set_layout('back');
         $this->template->set('message', $this->session->flashdata('message'));
     }
@@ -97,7 +94,7 @@ class Pictures extends CI_Controller
         $this->template->build('admin/pictures/add');
     }
 
-    
+
     function edit($id)
     {
         $picture=$this->picture_model->get($id);

@@ -17,10 +17,32 @@ class Mediamanager extends CI_Controller
      * @return void
      * @author Me
      */
-    public function index()
+    public function index($page_number = 1, $order_by = 'id', $how = 'desc', $limit = 10)
     {
-        $data['pictures'] = $this->picture_model->order_by('id','desc')->get_all();
+
+        //pagination
+        $config['total_rows'] = $this->picture_model->count_all();
+        $config['per_page'] = $limit;
+        $config['uri_segment'] = 4;
+        $config['use_page_numbers']=true;
+        $config['base_url'] = '/admin/mediamanager/index';
+        $offset = ($this->uri->segment($config['uri_segment']) - 1) * $config['per_page'];
+        $offset < 0 ? $offset = 0 : '';
+        $this->pagination->initialize($config);
+
+        $data['pictures']=$this->picture_model->limit($limit, $offset)->order_by($order_by, $how)->get_all();
         $this->load->view('admin/mediamanager/index', $data);
+    }
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     * @author Me
+     */
+    public function get_modal()
+    {
+        $this->load->view('admin/mediamanager/get_modal');
     }
 
     /**

@@ -5,6 +5,8 @@
 /application/config/database.php
 *~
 !/assets/js
+!/assets/css
+!/assets/scss
 !/assets/img
 */config/development
 */logs/log-*.php

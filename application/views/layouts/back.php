@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/placeholder.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/upload.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/autocomplete.min.css" />
+<link rel="stylesheet" href="/assets/css/zapleczko.css">
                 <?php echo $template['metadata']; ?>
     </head>
     <body>
@@ -69,6 +70,10 @@ echo 'Wersje php na serwerze:'.PHP_VERSION;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/autocomplete.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/js/components/grid.min.js"></script>
 <script src="//tinymce.cachefly.net/<?=TINYMCE_VERSION;?>/tinymce.min.js"></script>
+<script>
+//set global constant
+UIKIT_VERSION = "<?=UIKIT_VERSION;?>";
+</script>
 <script src="/assets/js/pages.js"></script>
 <script src="/assets/js/mediamanager.js"></script>
 
