@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/form-file.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/placeholder.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/upload.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/progress.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/<?=UIKIT_VERSION;?>/css/components/autocomplete.min.css" />
 <link rel="stylesheet" href="/assets/css/zapleczko.css">
                 <?php echo $template['metadata']; ?>
