@@ -1,10 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+
 /*
  * page default dispatcher
  */
 
-class Test_page extends MY_Test_Controller
+class Test_page extends Test_Controller
 {
     function __construct()
     {
@@ -13,7 +14,6 @@ class Test_page extends MY_Test_Controller
 
     public function get()
     {
-        echo 'jest';
         $slug = $this->uri->segment(1);
         $page = $this->page_model->get_by('slug', $slug);
 
