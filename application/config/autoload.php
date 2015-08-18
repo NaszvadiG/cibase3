@@ -60,7 +60,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 
-$autoload['libraries'] = array('database','template','form_validation','table','ion_auth', 'upload' ,'image_lib', 'pagination');
+$autoload['libraries'] = array('Test_Controller', 'database','template','form_validation','table','ion_auth', 'upload' ,'image_lib', 'pagination');
 
 /*
 | -------------------------------------------------------------------

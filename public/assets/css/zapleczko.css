@@ -1,0 +1,31 @@
+/* line 1, ../scss/zapleczko.scss */
+.mediamanager__grid {
+  clear: both;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+/* line 6, ../scss/zapleczko.scss */
+.mediamanager__grid ul.uk-pagination {
+  clear: both;
+  display: block;
+  margin: 0.5em auto;
+  width: 100%;
+}
+
+/* line 14, ../scss/zapleczko.scss */
+.mediamanager__item {
+  float: left;
+  height: 190px;
+  width: 190px;
+}
+/* line 19, ../scss/zapleczko.scss */
+.mediamanager__item img {
+  display: block;
+  margin: 5px auto;
+}
+
+/* line 25, ../scss/zapleczko.scss */
+.mediamanager__thumb--active {
+  outline: black solid;
+}
