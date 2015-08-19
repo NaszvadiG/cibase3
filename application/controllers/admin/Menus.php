@@ -23,5 +23,6 @@ class Menus extends Admin_Controller
      */
     public function index()
     {
+        $this->menu_model->get_all();
     }
 }

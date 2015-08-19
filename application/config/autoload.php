@@ -60,7 +60,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 
-$autoload['libraries'] = array( 'database','template','form_validation','table','ion_auth', 'upload' ,'image_lib', 'pagination');
+$autoload['libraries'] = array( 'database','form_validation','table','ion_auth', 'upload' ,'image_lib', 'pagination');
 
 /*
 | -------------------------------------------------------------------
@@ -136,4 +136,4 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('user_model','page_model','picture_model');
+$autoload['model'] = array('user_model','page_model','picture_model', 'menu_model');

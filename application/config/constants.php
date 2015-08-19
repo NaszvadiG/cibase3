@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-define('SITE_TITLE','ci_base 3');
+define('SITE_TITLE','CIBASE');
 define('HTML_LANG','pl');
 define('JQUERY_VERSION','1.11.3');
 define('TINYMCE_VERSION','4.1');
