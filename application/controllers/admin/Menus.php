@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @version 0.0.1
  */
 
-class Menus extends CI_Controller
+class Menus extends Admin_Controller
 {
     function __construct()
     {

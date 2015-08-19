@@ -510,8 +510,8 @@ $config['proxy_ips'] = '';
 */
 function __autoload($class)
 {
- if(strpos($class, 'CI_') !== 0)
+ if(strpos($class, 'Controller') !== FALSE)
  {
-  @include_once( APPPATH . 'core/'. $class . EXT );
+  include_once( APPPATH . 'core/'. $class . '.php');
  }
 }

@@ -73,7 +73,8 @@ $config['migration_auto_latest'] = FALSE;
 //$config['migration_version'] = 20141216113000; //ci_sessions
 //$config['migration_version'] = 20141216114200; //pages
 //$config['migration_version'] = 20150510222900; //add pictures
-$config['migration_version'] = 20150723150000; //ion_auth
+//$config['migration_version'] = 20150723150000; //ion_auth
+$config['migration_version'] = 20150819150000; //menus
 /*
 |--------------------------------------------------------------------------
 | Migrations Path
